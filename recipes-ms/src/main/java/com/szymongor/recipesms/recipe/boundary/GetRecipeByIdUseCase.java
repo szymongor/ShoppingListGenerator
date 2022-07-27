@@ -15,7 +15,7 @@ public class GetRecipeByIdUseCase {
 
     private final RecipeRepository recipeRepository;
 
-    public Recipe execute(Integer id) {
+    public Recipe execute(String id) {
         return recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cant find Recipe with id: " + id));
     }

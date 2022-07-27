@@ -18,7 +18,7 @@ public class RecipesController {
     private final GetRecipeByIdUseCase getRecipeByIdUseCase;
 
     @GetMapping("/{id}")
-    public Recipe getRecipe(@PathVariable("id") int id){
+    public Recipe getRecipe(@PathVariable("id") String id) {
         log.info("about to retrieve book {}", id);
         return getRecipeByIdUseCase.execute(id);
     }

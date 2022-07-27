@@ -1,22 +1,19 @@
 package com.szymongor.recipesms.recipe.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
-
-import java.util.Set;
-
-import static javax.persistence.FetchType.EAGER;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-public class Recipe {
+public class Ingredient {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -24,8 +21,5 @@ public class Recipe {
     private String id;
 
     private String name;
-
-    @ManyToMany(fetch = EAGER)
-    private Set<Ingredient> ingredients;
 
 }
